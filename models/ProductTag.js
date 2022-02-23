@@ -6,25 +6,27 @@ class ProductTag extends Model { }
 
 ProductTag.init(
     {
+        //define columns
         id:{
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement:: true
+            autoIncrement: true,
         },
-        product_id:{
+        product_id: {
             type: INTEGER,
             references: {
                 model:'product',
-                key: 'id'
-            }
+                key: 'id',
+            },
         },
         tag_id:{
             type: DataTypes.INTEGER,
+            //reference tag id
             references:{
                 model: 'tag',
-                key: 'id'
-            }
+                key: 'id',
+            },
         }
     },
     {
@@ -36,4 +38,4 @@ ProductTag.init(
     }
 );
 
-module.exports = ProductTag
+module.exports = ProductTag;
